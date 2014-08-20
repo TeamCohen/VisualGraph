@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Welcome to the Visual ProPPR Tool
 =====================================
 
@@ -41,4 +40,3 @@ Visual-Graph
 ============
 
 Repository for the Visual Graph program.
->>>>>>> dc50deb7bf5243502148375bfe96874137d9c013
