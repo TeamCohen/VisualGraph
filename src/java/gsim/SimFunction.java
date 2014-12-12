@@ -7,7 +7,7 @@ package gsim;
  * @author brandon
  *
  */
-public enum SimFunction implements java.io.Serializable {
+public enum SimFunction implements java.io.Serializable { 
 	addVertex,
 	addEdge,
 }

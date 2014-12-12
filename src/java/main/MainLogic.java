@@ -11,7 +11,7 @@ import org.graphstream.ui.swingViewer.Viewer;
  * @author brandon
  *
  */
-public class MainLogic {
+public class MainLogic { 
 
 
 	private GraphSim gs;

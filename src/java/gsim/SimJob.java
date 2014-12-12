@@ -5,7 +5,7 @@ package gsim;
  * @author brandon
  *
  */
-public class SimJob  implements java.io.Serializable {
+public class SimJob  implements java.io.Serializable { 
 	private static final long serialVersionUID = 1L;
 
 	public long id;

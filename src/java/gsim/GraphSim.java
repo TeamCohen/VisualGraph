@@ -34,7 +34,7 @@ import javax.swing.text.View;
  * @author brandon
  *
  */
-public class GraphSim {
+public class GraphSim { 
 	private Graph graph;
 	private GraphSimAlgorithm galgo;
 
@@ -273,7 +273,7 @@ public class GraphSim {
 	 * @param e
 	 * @return
 	 */
-	private boolean isEdgeAdded(String e){
+	private boolean isEdgePermitted(String e){
 		if(e.equals("id(trueLoop)")){
 			return false;
 		}
@@ -320,7 +320,11 @@ public class GraphSim {
 			}
 			if(!v1.equals(v2)){//This code stops from adding loops
 				// Bug - add edge
-				if(isEdgeAdded(e)){
+				if(isEdgePermitted(e)){
+					if (graph.getEdge(ed.toString()) != null) {
+						System.err.println("Duplicate edge "+ed.toString());
+						continue;
+					}
 					graph.addEdge(ed.toString(), v1, v2, true);
 					Edge edge = graph.getEdge(ed.toString());
 					edge.setAttribute("_ui.label", e);

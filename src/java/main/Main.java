@@ -1,21 +1,16 @@
 package main;
 
-import style.*;
-import gsim.GraphSim;
-
-import org.graphstream.graph.*;
-import org.graphstream.graph.implementations.*;
-
 import java.io.File;
 import java.util.Collection;
 import java.util.Iterator;
 
-import javax.swing.*;
+import org.graphstream.graph.Edge;
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.Node;
+import org.graphstream.graph.implementations.SingleGraph;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import style.StyleImporter;
+
 
 
 
@@ -25,8 +20,11 @@ public class Main {
 	public static void main(String[] args) {
 		//This is what is run when the program
 		//All of the code for the GUI is in ControlUI
-		ControlUI mainUI = new ControlUI();
-
+		ControlUI mainUI = new ControlUI(); 
+		if (args.length > 0) {
+			mainUI.openGraph(new File(args[0]));
+			mainUI.loadGraph();
+		}
 	}
 
 

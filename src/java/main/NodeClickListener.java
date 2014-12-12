@@ -19,7 +19,7 @@ import org.graphstream.ui.swingViewer.ViewerPipe;
  * @author brandon
  *
  */
-public class NodeClickListener implements ViewerListener , MouseInputListener{
+public class NodeClickListener implements ViewerListener , MouseInputListener{ 
 	public boolean loop = true;
 	private ViewerPipe vpipe = null;
 	private View vw = null;

@@ -5,7 +5,7 @@ package gsim;
  * @author brandon
  *
  */
-public class ImportEdgeDetails {
+public class ImportEdgeDetails { 
 	public String v1;
 	public String v2;
 	public String e;

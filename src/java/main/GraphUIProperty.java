@@ -6,7 +6,7 @@ package main;
  *
  */
 public class GraphUIProperty {
-	public GraphUIProperty(){}
+	public GraphUIProperty(){} 
 
 	public int width;
 	public int height;

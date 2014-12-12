@@ -45,7 +45,7 @@ public class ControlUI extends JFrame implements ActionListener, MouseWheelListe
 
 
 	// Logic Variables
-	private MainLogic MLogic;
+	private MainLogic MLogic; 
 	private 	File graph_file = null;
 	private 	File anim_file = null;
 
@@ -194,12 +194,10 @@ public class ControlUI extends JFrame implements ActionListener, MouseWheelListe
 		//this opens a window so that at a file can be selected
 		if (source == btn_chooseGraph)
 		{
+
 			int returnVal = fc.showOpenDialog(jfrm);
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				graph_file = fc.getSelectedFile();
-				lbl_graphPath.setText(graph_file.getName());
-				//This is where a real application would open the file.
-				System.out.println("Opening: " + graph_file.getName() + "." + "\n");
+				openGraph(fc.getSelectedFile());
 			} else {
 				System.out.println("Open command cancelled by user." + "\n");
 			}
@@ -210,7 +208,13 @@ public class ControlUI extends JFrame implements ActionListener, MouseWheelListe
 		{
 			loadGraph();
 		}
-	} 
+	}
+	
+	public void openGraph(File f) {
+		graph_file = f;
+		lbl_graphPath.setText(graph_file.getName());
+		System.out.println("Opening: " + graph_file.getName() + "." + "\n");
+	}
 
 	/**
 	 * Action listener for when the mouse wheel is moved. 
@@ -281,7 +285,7 @@ public class ControlUI extends JFrame implements ActionListener, MouseWheelListe
 	 * Function to load graph and create graph listener
 	 */
 	NodeClickListener clisten=null;
-	private void loadGraph()
+	public void loadGraph()
 	{
 		if (graph_file != null)
 		{

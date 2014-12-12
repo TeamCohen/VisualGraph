@@ -27,7 +27,7 @@ import org.graphstream.stream.SinkAdapter;
  * @author brandon
  *
  */
-public class GraphSimAlgorithm extends SinkAdapter implements DynamicAlgorithm {
+public class GraphSimAlgorithm extends SinkAdapter implements DynamicAlgorithm { 
 
 	private int delay = 750;
 	private int flash_delay = 50;
