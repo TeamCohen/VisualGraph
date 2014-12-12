@@ -1,0 +1,37 @@
+<project name="Visual Graph" default="compile" basedir=".">
+    <description>
+        Project Description
+    </description>
+ 
+  <!-- set global properties for this build -->
+  <property name="projectName" value="VisualGraph"/>
+  <property name="src" location="src/java"/>
+  <property name="build" location="build"/>
+  <path id="classpath">
+    <pathelement location="lib/gs-core-1.2/gs-core-1.2.jar"/>
+    <pathelement location="lib/gs-algo-1.2/gs-algo-1.2.jar"/>
+    <pathelement location="lib/gs-ui-1.2/gs-ui-1.2.jar"/>
+   </path>
+ 
+  <target name="init">
+    	<!-- Create the time stamp -->
+   	 <tstamp/>
+    	<!-- Create the build directory structure used by compile -->
+    	<mkdir dir="${build}"/>
+  </target>
+ 
+  <target name="compile" depends="init"
+  	description="compile the source " >
+    	<!-- Compile the java code from ${src} into ${build} -->
+   	<javac srcdir="${src}" destdir="${build}">
+	  <classpath refid="classpath"/>
+	</javac>
+  </target>
+  
+  <target name="clean"
+    	description="clean up" >
+    	<!-- Delete the ${build} and ${dist} directory trees -->
+    	<delete dir="${build}"/>
+    	<delete dir="${dist}"/>
+  </target>
+</project>
